@@ -6,7 +6,7 @@ require_once($CFG->dirroot . '/mod/submission/backup/moodle2/backup_submission_s
  * submission backup task that provides all the settings and steps to perform one
  * complete backup of the activity
  */
-class backup_submission_activity_task extends backup_submission_task {
+class backup_submission_activity_task extends backup_activity_task {
 
     /**
      * Define (add) particular settings this activity can have

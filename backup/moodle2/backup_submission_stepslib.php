@@ -6,7 +6,7 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-class backup_submission_activity_structure_step extends backup_submission_structure_step {
+class backup_submission_activity_structure_step extends backup_activity_structure_step {
 
     protected function define_structure() {
 
@@ -28,7 +28,7 @@ class backup_submission_activity_structure_step extends backup_submission_struct
             $submission->add_child($responses);
             $responses->add_child($response);
 
-            $response->set_source_table('submission_responses', ['submission' => backup::VAR_PARENTID], 'id ASC');
+            $response->set_source_table('submission_responses', ['id' => backup::VAR_PARENTID], 'id ASC');
 
             // map response userid to user table
             $response->annotate_ids('user', 'userid');
